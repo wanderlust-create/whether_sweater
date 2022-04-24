@@ -36,7 +36,7 @@ RSpec.describe ForecastFacade, :vcr do
         daily_weather = ForecastFacade.daily_weather(lat, lon, unit)
         expect(daily_weather).to be_an Array
         expect(daily_weather.count).to eq(5)
-        current_weather_objects.each do |object|
+        daily_weather.each do |object|
           expect(object).to be_a DailyWeather
           expect(object.date).to_not be_nil
           expect(object.sunrise).to_not be_nil
@@ -54,7 +54,7 @@ RSpec.describe ForecastFacade, :vcr do
         hourly_weather = ForecastFacade.hourly_weather(lat, lon, unit)
         expect(hourly_weather).to be_an Array
         expect(hourly_weather.count).to eq(8)
-        hourly_weather_objects.each do |object|
+        hourly_weather.each do |object|
           expect(object).to be_a HourlyWeather
           expect(object.time).to_not be_nil
           expect(object.temperature).to_not be_nil
