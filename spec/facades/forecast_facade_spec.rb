@@ -33,9 +33,9 @@ RSpec.describe ForecastFacade, :vcr do
 
     describe '#daily_weather' do
       it 'will return an array of the next 5 days of daily weather data' do
-        current_weather_objects = ForecastFacade.daily_weather(lat, lon, unit)
-        expect(current_weather_objects).to be_an Array
-        expect(current_weather_objects.count).to eq(5)
+        daily_weather = ForecastFacade.daily_weather(lat, lon, unit)
+        expect(daily_weather).to be_an Array
+        expect(daily_weather.count).to eq(5)
         current_weather_objects.each do |object|
           expect(object).to be_a DailyWeather
           expect(object.date).to_not be_nil
@@ -50,10 +50,10 @@ RSpec.describe ForecastFacade, :vcr do
     end
 
     describe '#hourly_weather' do
-      it 'will return an array of the next 8 hours of hourly weather data' do
-        hourly_weather_objects = ForecastFacade.hourly_weather(lat, lon, unit)
-        expect(hourly_weather_objects).to be_an Array
-        expect(hourly_weather_objects.count).to eq(8)
+      it "will return an array of the next 8 hours of hourly weather data" do
+        hourly_weather = ForecastFacade.hourly_weather(lat, lon, unit)
+        expect(hourly_weather).to be_an Array
+        expect(hourly_weather.count).to eq(8)
         hourly_weather_objects.each do |object|
           expect(object).to be_a HourlyWeather
           expect(object.time).to_not be_nil
