@@ -1,6 +1,6 @@
 class Api::V1::ForecastController < ApplicationController
   def index
-    location = ForecastFacade.location(params[:given_location])
+    location = ForecastFacade.location(params[:location])
     lat = location.latitude
     lon = location.longitude
 
