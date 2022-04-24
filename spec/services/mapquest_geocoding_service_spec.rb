@@ -3,7 +3,6 @@ RSpec.describe MapquestGeocodingService, :vcr do
   context 'class methods' do
     context '#get_lat_lon' do
       it 'returns the latitude and longitude for a requested city' do
-
         search = MapquestGeocodingService.get_lat_lon('atlanta')
         expect(search).to be_a Hash
         expect(search[:results]).to be_an Array

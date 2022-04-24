@@ -9,7 +9,7 @@ RSpec.describe OpenWeatherService, :vcr do
 
         search = OpenWeatherService.get_weather(lat, lon, unit)
         expect(search).to be_a Hash
-        expect(search.keys).to eq([:lat, :lon, :timezone, :timezone_offset, :current, :hourly, :daily])
+        expect(search.keys).to eq(%i[lat lon timezone timezone_offset current hourly daily])
         expect(search[:current]).to be_a Hash
         expect(search[:hourly]).to be_an Array
         expect(search[:daily]).to be_an Array

@@ -6,6 +6,7 @@ class DailyWeather
               :min_temp,
               :conditions,
               :icon
+
   def initialize(data)
     @date = Time.at(data[:dt]).to_s
     @sunrise = Time.at(data[:sunrise]).to_s
@@ -15,4 +16,4 @@ class DailyWeather
     @conditions = data[:weather][0][:description]
     @icon = data[:weather][0][:icon]
   end
-end 
+end
