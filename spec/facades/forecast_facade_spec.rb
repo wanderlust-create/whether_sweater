@@ -50,7 +50,7 @@ RSpec.describe ForecastFacade, :vcr do
     end
 
     describe '#hourly_weather' do
-      it "will return an array of the next 8 hours of hourly weather data" do
+      it 'will return an array of the next 8 hours of hourly weather data' do
         hourly_weather = ForecastFacade.hourly_weather(lat, lon, unit)
         expect(hourly_weather).to be_an Array
         expect(hourly_weather.count).to eq(8)

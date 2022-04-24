@@ -1,11 +1,11 @@
 class ForecastSerializer
   include JSONAPI::Serializer
 
-  def self.api_format(lat, lon, current, daily, hourly)
+  def self.api_format(_lat, _lon, current, daily, hourly)
     {
       "data": {
         "id": nil,
-        "type": "forecast",
+        "type": 'forecast',
         "attributes": {
           "current_weather": {
             "datetime": current.datetime,
@@ -64,56 +64,56 @@ class ForecastSerializer
               "min_temp": daily[4].min_temp,
               "conditions": daily[4].conditions,
               "icon": daily[4].icon
-            },
+            }
           ],
           "hourly_weather": [
             {
               "time": hourly[0].time,
               "temperature": hourly[0].temperature,
               "conditions": hourly[0].conditions,
-              "icon": hourly[0].icon,
+              "icon": hourly[0].icon
             },
             {
               "time": hourly[1].time,
               "temperature": hourly[1].temperature,
               "conditions": hourly[1].conditions,
-              "icon": hourly[1].icon,
+              "icon": hourly[1].icon
             },
             {
               "time": hourly[2].time,
               "temperature": hourly[2].temperature,
               "conditions": hourly[2].conditions,
-              "icon": hourly[2].icon,
+              "icon": hourly[2].icon
             },
             {
               "time": hourly[3].time,
               "temperature": hourly[3].temperature,
               "conditions": hourly[3].conditions,
-              "icon": hourly[3].icon,
+              "icon": hourly[3].icon
             },
             {
               "time": hourly[4].time,
               "temperature": hourly[4].temperature,
               "conditions": hourly[4].conditions,
-              "icon": hourly[4].icon,
+              "icon": hourly[4].icon
             },
             {
               "time": hourly[5].time,
               "temperature": hourly[5].temperature,
               "conditions": hourly[5].conditions,
-              "icon": hourly[5].icon,
+              "icon": hourly[5].icon
             },
             {
               "time": hourly[6].time,
               "temperature": hourly[6].temperature,
               "conditions": hourly[6].conditions,
-              "icon": hourly[6].icon,
+              "icon": hourly[6].icon
             },
             {
               "time": hourly[7].time,
               "temperature": hourly[7].temperature,
               "conditions": hourly[7].conditions,
-              "icon": hourly[7].icon,
+              "icon": hourly[7].icon
             }
           ]
         }
