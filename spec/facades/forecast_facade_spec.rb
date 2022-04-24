@@ -1,11 +1,11 @@
 require 'rails_helper'
 RSpec.describe ForecastFacade, :vcr do
   describe 'class methods' do
-    let(:given_location) {"Staten Island"}
-    let(:location) {ForecastFacade.location(given_location)}
-    let(:lat) {location.latitude}
-    let(:lon) {location.longitude}
-    let(:unit) {"metric"}
+    let(:given_location) { 'Staten Island' }
+    let(:location) { ForecastFacade.location(given_location) }
+    let(:lat) { location.latitude }
+    let(:lon) { location.longitude }
+    let(:unit) { 'metric' }
 
     describe '#location' do
       it 'will return the locations attributes' do
@@ -17,7 +17,6 @@ RSpec.describe ForecastFacade, :vcr do
 
     describe '#current_weather' do
       it 'will return the current weather' do
-
         current_weather = ForecastFacade.current_weather(lat, lon, unit)
         expect(current_weather.datetime).to_not be_nil
         expect(current_weather.sunrise).to_not be_nil
@@ -51,7 +50,7 @@ RSpec.describe ForecastFacade, :vcr do
     end
 
     describe '#hourly_weather' do
-      it "will return an array of the next 8 hours of hourly weather data" do
+      it 'will return an array of the next 8 hours of hourly weather data' do
         hourly_weather_objects = ForecastFacade.hourly_weather(lat, lon, unit)
         expect(hourly_weather_objects).to be_an Array
         expect(hourly_weather_objects.count).to eq(8)

@@ -1,5 +1,4 @@
 class ForecastFacade
-
   def self.location(given_location)
     location_details = MapquestGeocodingService.get_lat_lon(given_location)[:results][0][:locations][0]
     data = Location.new(location_details)
@@ -17,6 +16,6 @@ class ForecastFacade
 
   def self.hourly_weather(lat, lon, unit)
     hourly_data = OpenWeatherService.get_weather(lat, lon, unit)[:hourly][0..7]
-    data = hourly_data.map { | hour| HourlyWeather.new(hour) }
+    data = hourly_data.map { |hour| HourlyWeather.new(hour) }
   end
 end
