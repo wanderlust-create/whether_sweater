@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/search?categories=bar&limit=1&location=Savannah,%20GA&term=restaurants
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer 7cjyTgj41AlpgEpy7azCHmVl5o6Y4z81ShtVLpT5mUlm0Q5UWQkpYNpsv3hrOBFbjaiVeLqZZwLP4kwZMLCg0CINss_S7VFDLO5FZjHyApMcTKPKC9JPiXenG-BlYnYx
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      X-Routing-Service:
+      - routing-main--useast1-555fff7d67-74t5w; site=public_api_v3
+      X-B3-Sampled:
+      - '0'
+      Server:
+      - envoy
+      Ratelimit-Remaining:
+      - '4992'
+      Ratelimit-Resettime:
+      - '2022-04-26T00:00:00+00:00'
+      X-Zipkin-Id:
+      - aa41d1789a8fcc4d
+      Ratelimit-Dailylimit:
+      - '5000'
+      X-Cloudmap:
+      - routing_useast1
+      X-Proxied:
+      - 10-65-73-48-useast1aprod
+      X-Extlb:
+      - 10-65-73-48-useast1aprod
+      Cache-Control:
+      - max-age=0, no-store, private, no-transform
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Mon, 25 Apr 2022 17:20:36 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-dfw18634-DFW
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"businesses": [{"id": "PuPnTzZggLLj4ZvCjqopew", "alias": "treylor-park-savannah",
+        "name": "Treylor Park", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/Vkg-dhffwvQHUcbV6TWV3w/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/treylor-park-savannah?adjust_creative=agvJk9coBmymQXFjKp3MKA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=agvJk9coBmymQXFjKp3MKA",
+        "review_count": 3498, "categories": [{"alias": "newamerican", "title": "American
+        (New)"}, {"alias": "bars", "title": "Bars"}, {"alias": "breakfast_brunch",
+        "title": "Breakfast & Brunch"}], "rating": 4.5, "coordinates": {"latitude":
+        32.08028, "longitude": -81.08969}, "transactions": ["delivery"], "price":
+        "$$", "location": {"address1": "115 E Bay St", "address2": "", "address3":
+        "", "city": "Savannah", "zip_code": "31401", "country": "US", "state": "GA",
+        "display_address": ["115 E Bay St", "Savannah, GA 31401"]}, "phone": "+19124955557",
+        "display_phone": "(912) 495-5557", "distance": 3935.909545314136}], "total":
+        903, "region": {"center": {"longitude": -81.10862731933594, "latitude": 32.04878325673531}}}'
+  recorded_at: Mon, 25 Apr 2022 17:20:36 GMT
+recorded_with: VCR 6.1.0

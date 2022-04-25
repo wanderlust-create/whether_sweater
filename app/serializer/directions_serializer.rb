@@ -7,11 +7,11 @@ class DirectionsSerializer
     "id": nil,
     "type": "munchie",
     "attributes": {
-      "destination_city": ,
-      "travel_time": ,
+      "destination_city": destination,
+      "travel_time": directions.travel_time,
       "forecast": {
-        "summary": ,
-        "temperature":
+        "summary": current.conditions,
+        "temperature": current.temperature
       },
       "restaurant": {
         "name": ,
