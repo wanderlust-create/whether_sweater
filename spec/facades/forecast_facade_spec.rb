@@ -10,6 +10,7 @@ RSpec.describe ForecastFacade, :vcr do
     describe '#location' do
       it 'will return the locations attributes' do
         location = ForecastFacade.location(given_location)
+        expect(location).to be_a Location
         expect(location.latitude).to_not be_nil
         expect(location.longitude).to_not be_nil
       end
@@ -18,6 +19,7 @@ RSpec.describe ForecastFacade, :vcr do
     describe '#current_weather' do
       it 'will return the current weather' do
         current_weather = ForecastFacade.current_weather(lat, lon, unit)
+        expect(current_weather).to be_a CurrentWeather
         expect(current_weather.datetime).to_not be_nil
         expect(current_weather.sunrise).to_not be_nil
         expect(current_weather.sunset).to_not be_nil
