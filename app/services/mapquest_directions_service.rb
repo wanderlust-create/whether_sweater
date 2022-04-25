@@ -1,6 +1,6 @@
-class MapquestGeocodingService
-  def self.get_lat_lon(location)
-    get_url("/geocoding/v1/address?key=#{ENV['map_key']}&location=#{location}")
+class MapquestDirectionsService
+  def self.get_directions(from, to)
+    get_url("/directions/v2/route?key=#{ENV['map_key']}&from=#{from}&to=#{to}")
   end
 
   def self.get_url(url)
