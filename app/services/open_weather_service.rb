@@ -4,7 +4,6 @@ class OpenWeatherService
   end
 
   def self.get_url(url, lat, lon, units)
-    require "pry"; binding.pry
     conn = Faraday.new(url: 'https://api.openweathermap.org') do |faraday|
       faraday.params['appid'] = ENV['open_key']
       faraday.params['lat'] = lat.to_s
