@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.describe "Wheather Sweater API", type: :request do
+RSpec.describe 'Wheather Sweater API', type: :request do
   describe 'index GET /api/v1/munchies' do
     describe 'happy path' do
       it 'returns json request' do
@@ -10,7 +10,7 @@ RSpec.describe "Wheather Sweater API", type: :request do
         expect(munchies).to have_key(:data)
         expect(munchies[:data]).to be_a Hash
         expect(munchies[:data][:id]).to be_nil
-        expect(munchies[:data][:type]).to eq("munchie")
+        expect(munchies[:data][:type]).to eq('munchie')
 
         expect(munchies[:data]).to have_key(:attributes)
         expect(munchies[:data][:attributes]).to have_key(:destination_city)
