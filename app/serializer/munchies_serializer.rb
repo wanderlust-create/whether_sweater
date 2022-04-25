@@ -1,7 +1,7 @@
 class MunchiesSerializer
   include JSONAPI::Serializer
 
-  def self.api_format(destination, directions, current, restaurant)
+  def self.api_format(destination, directions, current, temp, restaurant)
     {
       "data": {
         "id": nil,
@@ -11,7 +11,7 @@ class MunchiesSerializer
           "travel_time": directions.travel_time,
           "forecast": {
             "summary": current.conditions,
-            "temperature": current.temperature
+            "temperature": temp
           },
           "restaurant": {
             "name": restaurant.name,
