@@ -43,6 +43,6 @@ RSpec.describe Restaurant do
 
     expect(restaurant).to be_a Restaurant
     expect(restaurant.name).to eq("Poor Calvin's")
-    expect(restaurant.address).to eq(['510 Piedmont Ave NE', 'Atlanta, GA 30308'])
+    expect(restaurant.address).to eq( "510 Piedmont Ave NE Atlanta, GA 30308")
   end
 end
