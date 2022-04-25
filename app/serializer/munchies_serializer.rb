@@ -5,7 +5,7 @@ class MunchiesSerializer
     {
       "data": {
         "id": nil,
-        "type": "munchie",
+        "type": 'munchie',
         "attributes": {
           "destination_city": destination,
           "travel_time": directions.travel_time,

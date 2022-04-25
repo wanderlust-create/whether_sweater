@@ -22,18 +22,19 @@ RSpec.describe Directions do
         "computedWaypoints": [],
         "routeError": {
           "errorCode": -400,
-          "message": ""
+          "message": ''
         },
-        "formattedTime": "03:42:32",
-        "sessionId": "6266bd8d-028a-6750-02b4-34c6-1237e9ae5209",
+        "formattedTime": '03:42:32',
+        "sessionId": '6266bd8d-028a-6750-02b4-34c6-1237e9ae5209',
         "hasAccessRestriction": false,
-        "realTime": 13732,
+        "realTime": 13_732,
         "hasSeasonalClosure": false,
         "hasCountryCross": false,
         "fuelUsed": 12.13
-        }}
-        route = Directions.new(directions_data)
-        expect(route).to be_a Directions
-        expect(route.travel_time).to eq("03:42:32")
-      end
-    end
+      }
+    }
+    route = Directions.new(directions_data)
+    expect(route).to be_a Directions
+    expect(route.travel_time).to eq('03:42:32')
+  end
+end

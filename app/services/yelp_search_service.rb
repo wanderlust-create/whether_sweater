@@ -6,9 +6,9 @@ class YelpSearchService
   def self.get_url(url, category, location)
     conn = Faraday.new(url: 'https://api.yelp.com') do |faraday|
       faraday.headers['Authorization'] = ENV['YELP_API_KEY']
-      faraday.params['term'] = "restaurants"
-      faraday.params['categories'] = "#{category}"
-      faraday.params['location'] = "#{location}"
+      faraday.params['term'] = 'restaurants'
+      faraday.params['categories'] = category.to_s
+      faraday.params['location'] = location.to_s
       faraday.params['limit'] = 1
     end
     response = conn.get(url)
