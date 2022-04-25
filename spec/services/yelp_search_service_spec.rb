@@ -1,11 +1,11 @@
 require 'rails_helper'
-RSpec.describe YelpService, :vcr do
+RSpec.describe YelpSearchService, :vcr do
   context 'class methods' do
     context '#get_restaurant_search' do
             it 'returns a specific type of restaurant' do
-              categories = 'cafe'
-              location = 'atlanta'
-              search = YelpService.get_restaurant(categories, location)
+
+              search = YelpSearchService.get_restaurant('cafe', 'Atlanta, GA')
+              require "pry"; binding.pry
               expect(search).to be_a Hash
               expect(search[:businesses]).to be_an Array
             end
