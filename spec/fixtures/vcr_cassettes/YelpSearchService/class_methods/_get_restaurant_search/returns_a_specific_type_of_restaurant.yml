@@ -1,0 +1,196 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/search?categories=categories&client_id=<un_ac>&limit=1&location=location&term=restaurants
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - 7cjyTgj41AlpgEpy7azCHmVl5o6Y4z81ShtVLpT5mUlm0Q5UWQkpYNpsv3hrOBFbjaiVeLqZZwLP4kwZMLCg0CINss_S7VFDLO5FZjHyApMcTKPKC9JPiXenG-BlYnYx
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '415'
+      Content-Type:
+      - application/json
+      X-B3-Sampled:
+      - '0'
+      X-Zipkin-Id:
+      - 7261765c277d5a52
+      X-Routing-Service:
+      - routing-main--useast1-86bc69788c-t9522; site=public_api_v3
+      Server:
+      - envoy
+      X-Cloudmap:
+      - routing_useast1
+      X-Proxied:
+      - 10-65-85-173-useast1aprod
+      X-Extlb:
+      - 10-65-85-173-useast1aprod
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Mon, 25 Apr 2022 16:12:39 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-dfw18637-DFW
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: '{"error": {"code": "VALIDATION_ERROR", "description": "''7cjyTgj41AlpgEpy7azCHmVl5o6Y4z81ShtVLpT5mUlm0Q5UWQkpYNpsv3hrOBFbjaiVeLqZZwLP4kwZMLCg0CINss_S7VFDLO5FZjHyApMcTKPKC9JPiXenG-BlYnYx''
+        does not match ''^(?i)Bearer [A-Za-z0-9\\\\-\\\\_]{128}$''", "field": "Authorization",
+        "instance": "7cjyTgj41AlpgEpy7azCHmVl5o6Y4z81ShtVLpT5mUlm0Q5UWQkpYNpsv3hrOBFbjaiVeLqZZwLP4kwZMLCg0CINss_S7VFDLO5FZjHyApMcTKPKC9JPiXenG-BlYnYx"}}'
+  recorded_at: Mon, 25 Apr 2022 16:12:39 GMT
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/search?categories=categories&limit=1&location=location&term=restaurants
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer 7cjyTgj41AlpgEpy7azCHmVl5o6Y4z81ShtVLpT5mUlm0Q5UWQkpYNpsv3hrOBFbjaiVeLqZZwLP4kwZMLCg0CINss_S7VFDLO5FZjHyApMcTKPKC9JPiXenG-BlYnYx
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '123'
+      Content-Type:
+      - application/json
+      X-Zipkin-Id:
+      - db3555d4f65ee898
+      Server:
+      - envoy
+      X-Routing-Service:
+      - routing-main--useast1-86bc69788c-wms5c; site=public_api_v3
+      X-B3-Sampled:
+      - '0'
+      X-Cloudmap:
+      - routing_useast1
+      X-Proxied:
+      - 10-65-85-173-useast1aprod
+      X-Extlb:
+      - 10-65-85-173-useast1aprod
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Mon, 25 Apr 2022 16:17:09 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-dfw18654-DFW
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: '{"error": {"code": "LOCATION_NOT_FOUND", "description": "Could not
+        execute search, try specifying a more exact location."}}'
+  recorded_at: Mon, 25 Apr 2022 16:17:09 GMT
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/search?categories=cafe&limit=1&location=Atlanta,%20GA&term=restaurants
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer 7cjyTgj41AlpgEpy7azCHmVl5o6Y4z81ShtVLpT5mUlm0Q5UWQkpYNpsv3hrOBFbjaiVeLqZZwLP4kwZMLCg0CINss_S7VFDLO5FZjHyApMcTKPKC9JPiXenG-BlYnYx
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Ratelimit-Dailylimit:
+      - '5000'
+      Server:
+      - envoy
+      Ratelimit-Remaining:
+      - '4993'
+      Ratelimit-Resettime:
+      - '2022-04-26T00:00:00+00:00'
+      X-Zipkin-Id:
+      - 97ed1a71bb9ca02e
+      X-Routing-Service:
+      - routing-main--useast1-86bc69788c-746kc; site=public_api_v3
+      X-B3-Sampled:
+      - '0'
+      X-Cloudmap:
+      - routing_useast1
+      X-Proxied:
+      - 10-65-164-1-useast1bprod
+      X-Extlb:
+      - 10-65-164-1-useast1bprod
+      Cache-Control:
+      - max-age=0, no-store, private, no-transform
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Mon, 25 Apr 2022 16:22:33 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-dfw18644-DFW
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"businesses": [{"id": "U-i6cq-yFRVJC4pIKSLX9Q", "alias": "poor-calvins-atlanta-15",
+        "name": "Poor Calvin''s", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/OqNT3uMiq-ZvhkPmJz_2eA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/poor-calvins-atlanta-15?adjust_creative=agvJk9coBmymQXFjKp3MKA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=agvJk9coBmymQXFjKp3MKA",
+        "review_count": 3850, "categories": [{"alias": "asianfusion", "title": "Asian
+        Fusion"}, {"alias": "southern", "title": "Southern"}, {"alias": "comfortfood",
+        "title": "Comfort Food"}], "rating": 4.5, "coordinates": {"latitude": 33.7684,
+        "longitude": -84.38226}, "transactions": ["delivery", "pickup"], "price":
+        "$$$", "location": {"address1": "510 Piedmont Ave NE", "address2": null, "address3":
+        "", "city": "Atlanta", "zip_code": "30308", "country": "US", "state": "GA",
+        "display_address": ["510 Piedmont Ave NE", "Atlanta, GA 30308"]}, "phone":
+        "+14042544051", "display_phone": "(404) 254-4051", "distance": 5038.783352167851}],
+        "total": 3000, "region": {"center": {"longitude": -84.37362670898438, "latitude":
+        33.81321311652279}}}'
+  recorded_at: Mon, 25 Apr 2022 16:22:33 GMT
+recorded_with: VCR 6.1.0
