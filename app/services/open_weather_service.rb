@@ -1,9 +1,9 @@
 class OpenWeatherService
-  def self.get_weather(lat, lon, unit)
-    get_url('/data/2.5/onecall', lat, lon, unit)
+  def self.get_weather(lat, lon, units)
+    get_url('/data/2.5/onecall', lat, lon, units)
   end
 
-  def self.get_url(url, lat, lon, unit = metric)
+  def self.get_url(url, lat, lon, units)
     conn = Faraday.new(url: 'https://api.openweathermap.org') do |faraday|
       faraday.params['appid'] = ENV['open_key']
       faraday.params['lat'] = lat.to_s
