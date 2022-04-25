@@ -24,10 +24,7 @@ RSpec.describe "Wheather Sweater API", type: :request do
         expect(munchies[:data][:attributes][:forecast][:summary]).to be_a String
         expect(munchies[:data][:attributes][:forecast]).to have_key(:temperature)
         expect(munchies[:data][:attributes][:forecast][:temperature]).to be_a String
-<<<<<<< HEAD
 
-=======
->>>>>>> 93a0bc1527cf7bca49703ba7c8c6d9f955be0433
         expect(munchies[:data][:attributes]).to have_key(:restaurant)
         expect(munchies[:data][:attributes][:restaurant]).to have_key(:name)
         expect(munchies[:data][:attributes][:restaurant][:name]).to be_a String
