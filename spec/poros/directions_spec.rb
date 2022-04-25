@@ -35,6 +35,6 @@ RSpec.describe Directions do
     }
     route = Directions.new(directions_data)
     expect(route).to be_a Directions
-    expect(route.travel_time).to eq('03:42:32')
+    expect(route.travel_time).to eq("3 hours 42 min")
   end
 end
