@@ -7,7 +7,7 @@ class Api::V1::MunchiesController < ApplicationController
     directions = DirectionsFacade.directions(params[:from], params[:to])
     current = ForecastFacade.current_weather(lat, lon, params[:unit])
     restaurant = RestaurantFacade.restaurant(params[:categories], destination)
-
+    
     render json: MunchiesSerializer.api_format(destination, directions, current, restaurant)
   end
 end
