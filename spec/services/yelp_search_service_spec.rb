@@ -5,7 +5,6 @@ RSpec.describe YelpSearchService, :vcr do
             it 'returns a specific type of restaurant' do
 
               search = YelpSearchService.get_restaurant('cafe', 'Atlanta, GA')
-              require "pry"; binding.pry
               expect(search).to be_a Hash
               expect(search[:businesses]).to be_an Array
             end
