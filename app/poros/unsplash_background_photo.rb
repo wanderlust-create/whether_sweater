@@ -1,7 +1,10 @@
 class UnsplashBackgroundPhoto
-  attr_reader :url
+  attr_reader :id, :url, :artist, :portfolio
 
   def initialize(data)
-    @url = data[:full]
+    @id = data[:results][0][:id]
+    @url = data[:results][0][:urls][:full]
+    @artist = data[:results][0][:user][:name]
+    @portfolio = data[:results][0][:user][:portfolio_url]
   end
 end
