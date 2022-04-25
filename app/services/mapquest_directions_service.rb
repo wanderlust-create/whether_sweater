@@ -1,6 +1,6 @@
 class MapquestDirectionsService
-  def self.get_directions(from, to)
-    get_url("/directions/v2/route?key=#{ENV['map_key']}&from=#{from}&to=#{to}")
+  def self.get_directions(start, destination)
+    get_url("/directions/v2/route?key=#{ENV['map_key']}&start=#{start}&destination=#{destination}")
   end
 
   def self.get_url(url)
