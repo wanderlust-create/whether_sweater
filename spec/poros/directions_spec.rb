@@ -32,8 +32,8 @@ RSpec.describe Directions do
         "hasCountryCross": false,
         "fuelUsed": 12.13
         }}
-        route = Route.new(route_data)
-        expect(route).to be_a Route
-        expect(route.time).to eq("03:42:32")
+        route = Directions.new(directions_data)
+        expect(route).to be_a Directions
+        expect(route.travel_time).to eq("03:42:32")
       end
     end
