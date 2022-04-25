@@ -10,7 +10,6 @@ class OpenWeatherService
       faraday.params['lon'] = lon.to_s
       faraday.params['exclude'] = 'minutely, alerts'
       faraday.params['units'] = 'imperial'
-
     end
     response = conn.get(url)
     JSON.parse(response.body, symbolize_names: true)
