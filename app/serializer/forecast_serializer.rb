@@ -3,7 +3,7 @@
 class ForecastSerializer
   include JSONAPI::Serializer
 
-  def self.api_format(_lat, _lon, current, daily, hourly)
+  def self.api_format(current, daily, hourly)
     {
       "data": {
         "id": nil,

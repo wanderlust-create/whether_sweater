@@ -7,9 +7,9 @@ RSpec.describe OpenWeatherService, :vcr do
       it 'returns the weather for a requested city' do
         lat = 33.748547
         lon = -84.391502
-        unit = 'metric'
+        units = 'metric'
 
-        search = OpenWeatherService.get_weather(lat, lon, unit)
+        search = OpenWeatherService.get_weather(lat, lon, units)
         expect(search).to be_a Hash
         expect(search.keys).to eq(%i[lat lon timezone timezone_offset current hourly daily])
         expect(search[:current]).to be_a Hash
