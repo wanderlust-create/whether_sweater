@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class YelpSearchService
   def self.get_restaurant(category, location)
     get_url('/v3/businesses/search', category, location)
