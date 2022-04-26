@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 RSpec.describe 'Wheather Sweater API', type: :request do
   describe 'index GET /api/v1/munchies' do

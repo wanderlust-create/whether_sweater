@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 RSpec.describe 'Wheather Sweater API', type: :request do
   describe 'index GET /api/v1/backgrounds' do
@@ -15,8 +17,8 @@ RSpec.describe 'Wheather Sweater API', type: :request do
         expect(background[:data][:id]).to be_a String
 
         expect(background[:data]).to have_key(:type)
-        expect(background[:data][:type]).to eq("background_photo")
-        
+        expect(background[:data][:type]).to eq('background_photo')
+
         expect(background[:data]).to have_key(:attributes)
         expect(background[:data][:attributes]).to have_key(:url)
         expect(background[:data][:attributes][:url]).to be_a String

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Directions
   attr_reader :travel_time
 

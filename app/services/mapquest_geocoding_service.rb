@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MapquestGeocodingService
   def self.get_lat_lon(location)
     get_url("/geocoding/v1/address?key=#{ENV['map_key']}&location=#{location}")
