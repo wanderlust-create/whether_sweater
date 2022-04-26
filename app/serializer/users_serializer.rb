@@ -9,7 +9,7 @@ class UsersSerializer
         "id": user.id,
         "attributes": {
           "email": user.email,
-          "api_key": user.api_keys[0][:token]
+          "api_key": user.api_key
         }
       }
     }
