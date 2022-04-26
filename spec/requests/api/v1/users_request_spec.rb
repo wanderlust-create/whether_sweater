@@ -44,7 +44,6 @@ RSpec.describe 'Wheather Sweater API', type: :request do
         headers = {'Content-Type' => 'application/json', 'Accept' => 'application/json'}
         post '/api/v1/users', headers: headers, params: JSON.generate(data)
 
-        new_user = User.last
         expect(response.status).to eq(400)
         expect(response.body).to eq("Password confirmation doesn't match Password")
       end
