@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class OpenWeatherService
   def self.get_weather(lat, lon, units)
     get_url('/data/2.5/onecall', lat, lon, units)
