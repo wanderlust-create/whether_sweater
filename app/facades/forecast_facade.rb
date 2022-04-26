@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ForecastFacade
   def self.location(given_location)
     location_details = MapquestGeocodingService.get_lat_lon(given_location)[:results][0][:locations][0]

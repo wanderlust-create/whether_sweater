@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UnsplashBackgroundPhoto
   attr_reader :id, :url, :artist, :portfolio
 

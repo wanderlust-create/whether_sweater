@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MapquestDirectionsService
   def self.get_directions(start, destination)
     get_url("/directions/v2/route?key=#{ENV['map_key']}&from=#{start}&to=#{destination}")

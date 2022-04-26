@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 RSpec.describe ForecastFacade, :vcr do
   describe 'class methods' do
