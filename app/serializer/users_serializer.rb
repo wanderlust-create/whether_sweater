@@ -5,7 +5,7 @@ class UsersSerializer
   def self.api_format(user)
     {
       "data": {
-        "type": "users",
+        "type": 'users',
         "id": user.id,
         "attributes": {
           "email": user.email,
@@ -14,5 +14,4 @@ class UsersSerializer
       }
     }
   end
-
 end

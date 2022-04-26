@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Api
   module V1
     class UsersController < ApplicationController
@@ -10,7 +12,9 @@ module Api
           render json: { error: user.errors.full_messages.to_sentence }, status: :bad_request
         end
       end
+
       private
+
       def user_params
         params.permit(:email, :password, :password_confirmation)
       end
