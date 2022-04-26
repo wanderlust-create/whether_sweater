@@ -7,8 +7,6 @@ class DirectionsFacade
       data = Directions.new(direction_details)
     elsif direction_details[:info][:statuscode] != 0
       return "impossible route"
-    else
-      return "impossible route"
     end
   end
 end

@@ -3,7 +3,7 @@
 module Api
   module V1
     class RoadTripController < ApplicationController
-      before_action :authenticate
+      before_action :verify_params, :authenticate
       def create
         origin = params[:origin]
         destination = params[:destination]
@@ -28,6 +28,14 @@ module Api
         user = User.find_by(api_key: params[:api_key])
         if !user
          render json: { error: 'Invalid API key' }, status: 401
+        end
+      end
+
+      def verify_params
+        if params[:api_key] == '' || params[:origin] == '' || params[:destination] == ''
+          render json: { error: 'Incomplete information' }, status: 401
+        elsif !params[:api_key] || !params[:origin] || !params[:destination]
+          render json: { error: 'You need api_key, origin, & destination params to make a sucessful request' }, status: 401
         end
       end
     end
