@@ -8,17 +8,19 @@ module Api
         origin = params[:origin]
         destination = params[:destination]
         unit = 'imperial'
-
+        time = DirectionsFacade.directions(origin, destination)
+          if time.class == String
+            render json: { error: 'impossible route' }, status: 401
+          else
+        eta = time.eta_time
         destination_location = ForecastFacade.location(destination)
         lat = destination_location.latitude
         lon = destination_location.longitude
-
-        time = DirectionsFacade.directions(origin, destination)
-        eta = time.eta_time
         weather = ForecastFacade.road_trip_hourly_weather(lat, lon, unit)
         eta_weather = weather[eta]
         render json: RoadTripSerializer.api_format(origin, destination, time, eta_weather), status: 201
       end
+    end
 
       private
 
