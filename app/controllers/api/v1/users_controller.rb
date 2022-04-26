@@ -4,7 +4,8 @@ module Api
       def create
         user = User.create(user_params)
         if user.save
-          render json: { message: 'account created' }, status: 201
+          user.api_keys.create! token: SecureRandom.hex
+          render json: UsersSerializer.api_format(user), status: 201
         else
           render json: { error: user.errors.full_messages.to_sentence }, status: :bad_request
         end
