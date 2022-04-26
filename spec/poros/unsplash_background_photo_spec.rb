@@ -65,6 +65,6 @@ RSpec.describe UnsplashBackgroundPhoto do
     expect(photo.id).to eq('uILhNE1VcwA')
     expect(photo.url).to eq('https://images.unsplash.com/photo-1465256410760-10640339c72c?crop=entropy&cs=srgb&fm=jpg&ixid=MnwzMjI0MTl8MHwxfHNlYXJjaHwxfHxtZXhpY28lMjBsYW5kc2NhcGV8ZW58MHwwfHx8MTY1MDg0Nzc4MA&ixlib=rb-1.2.1&q=85')
     expect(photo.artist).to eq('Andrés Sanz')
-    expect(photo.portfolio).to eq('https://api.unsplash.com/users/sanzolome/portfolio')
+    expect(photo.portfolio).to eq('https://unsplash.com/photos/uILhNE1VcwA')
   end
 end
