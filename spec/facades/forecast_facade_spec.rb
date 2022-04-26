@@ -66,6 +66,18 @@ RSpec.describe ForecastFacade, :vcr do
           expect(object.icon).to_not be_nil
         end
       end
+
+      describe '#road_trip_hourly_weather' do
+        it 'will return an array of the next 48 hours of hourly weather data' do
+          hourly_weather = ForecastFacade.road_trip_hourly_weather(lat, lon, unit)
+          expect(hourly_weather).to be_an Array
+          expect(hourly_weather.count).to eq(48)
+          hourly_weather.each do |object|
+            expect(object[:temp]).to_not be_nil
+            expect(object[:weather][0][:description]).to_not be_nil
+          end
+        end
+      end
     end
   end
 end

@@ -20,4 +20,8 @@ class ForecastFacade
     hourly_data = OpenWeatherService.get_weather(lat, lon, unit)[:hourly][0..7]
     data = hourly_data.map { |hour| HourlyWeather.new(hour) }
   end
+
+  def self.road_trip_hourly_weather(lat, lon, unit)
+    hourly_data = OpenWeatherService.get_weather(lat, lon, unit)[:hourly]
+  end
 end

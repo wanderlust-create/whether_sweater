@@ -8,6 +8,10 @@ class Directions
   end
 
   def travel_time
-    "#{@time[0].to_i} hours #{@time[1].to_i} min"
+    "#{@time[0].to_i} hours, #{@time[1].to_i} min"
+  end
+
+  def eta_time
+    @time[0].to_i.round
   end
 end
