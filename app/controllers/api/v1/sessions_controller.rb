@@ -8,7 +8,7 @@ module Api
         if user && user.authenticate(params[:password])
           session[:user_id] = user.id
           render json: UsersSerializer.api_format(user), status: 201
-        elsif !user.authenticate(params[:password])
+        elsif !user.authenticate(params[:password]) 
           render json: { error: "Your email and/or password are invalid" }, status: :bad_request
         else
           render json: { error: "LogIn Failed" }, status: :bad_request
@@ -16,4 +16,4 @@ module Api
       end
     end
   end
-end 
+end
