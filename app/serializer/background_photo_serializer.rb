@@ -2,5 +2,25 @@
 
 class BackgroundPhotoSerializer
   include JSONAPI::Serializer
-  attributes :url, :artist, :portfolio
+
+  def self.api_format(image, location)
+    {
+      "data": {
+        "type": "image",
+        "id": image.id,
+        "attributes": {
+          "image": {
+            "location": location,
+            "image_url": image.url,
+            "credit": {
+              "source": "https://unsplash.com",
+              "photographer": image.artist,
+              "portfolio": image.portfolio,
+              "Guidelines and Crediting": "https://unsplash.com/documentation#guidelines--crediting"
+            }
+          }
+        }
+      }
+    }
+  end
 end

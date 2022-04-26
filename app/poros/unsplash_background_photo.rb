@@ -7,6 +7,6 @@ class UnsplashBackgroundPhoto
     @id = data[:results][0][:id]
     @url = data[:results][0][:urls][:full]
     @artist = data[:results][0][:user][:name]
-    @portfolio = data[:results][0][:user][:links][:portfolio]
+    @portfolio = data[:results][0][:links][:html]
   end
 end
