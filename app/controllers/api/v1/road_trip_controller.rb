@@ -10,7 +10,7 @@ module Api
         unit = 'imperial'
         time = DirectionsFacade.directions(origin, destination)
           if time.class == String
-            render json: { error: 'impossible route' }, status: 401
+            render json: time, status: 200
           else
         eta = time.eta_time
         destination_location = ForecastFacade.location(destination)

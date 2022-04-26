@@ -5,10 +5,10 @@ class DirectionsFacade
     direction_details = MapquestDirectionsService.get_directions(start, destination)
     if direction_details[:info][:statuscode] == 0
       data = Directions.new(direction_details)
-    elsif direction_details[:info][:statuscode] != 200
-      return direction_details[:info][:messages][0]
+    elsif direction_details[:info][:statuscode] != 0
+      return "impossible route"
     else
-      return "Impossible Route"
+      return "impossible route"
     end
   end
 end
