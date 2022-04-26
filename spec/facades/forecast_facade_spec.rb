@@ -7,7 +7,7 @@ RSpec.describe ForecastFacade, :vcr do
     let(:location) { ForecastFacade.location(given_location) }
     let(:lat) { location.latitude }
     let(:lon) { location.longitude }
-    let(:unit) { 'metric' }
+    let(:units) { 'metric' }
 
     describe '#location' do
       it 'will return the locations attributes' do
@@ -20,7 +20,7 @@ RSpec.describe ForecastFacade, :vcr do
 
     describe '#current_weather' do
       it 'will return the current weather' do
-        current_weather = ForecastFacade.current_weather(lat, lon, unit)
+        current_weather = ForecastFacade.current_weather(lat, lon, units)
         expect(current_weather).to be_a CurrentWeather
         expect(current_weather.datetime).to_not be_nil
         expect(current_weather.sunrise).to_not be_nil
@@ -37,7 +37,7 @@ RSpec.describe ForecastFacade, :vcr do
 
     describe '#daily_weather' do
       it 'will return an array of the next 5 days of daily weather data' do
-        daily_weather = ForecastFacade.daily_weather(lat, lon, unit)
+        daily_weather = ForecastFacade.daily_weather(lat, lon, units)
         expect(daily_weather).to be_an Array
         expect(daily_weather.count).to eq(5)
         daily_weather.each do |object|
@@ -55,7 +55,7 @@ RSpec.describe ForecastFacade, :vcr do
 
     describe '#hourly_weather' do
       it 'will return an array of the next 8 hours of hourly weather data' do
-        hourly_weather = ForecastFacade.hourly_weather(lat, lon, unit)
+        hourly_weather = ForecastFacade.hourly_weather(lat, lon, units)
         expect(hourly_weather).to be_an Array
         expect(hourly_weather.count).to eq(8)
         hourly_weather.each do |object|
@@ -69,7 +69,7 @@ RSpec.describe ForecastFacade, :vcr do
 
       describe '#road_trip_hourly_weather' do
         it 'will return an array of the next 48 hours of hourly weather data' do
-          hourly_weather = ForecastFacade.road_trip_hourly_weather(lat, lon, unit)
+          hourly_weather = ForecastFacade.road_trip_hourly_weather(lat, lon, units)
           expect(hourly_weather).to be_an Array
           expect(hourly_weather.count).to eq(48)
           hourly_weather.each do |object|

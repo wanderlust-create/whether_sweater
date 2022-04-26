@@ -11,7 +11,7 @@ module Api
         current = ForecastFacade.current_weather(lat, lon, params[:unit])
         daily = ForecastFacade.daily_weather(lat, lon, params[:unit])
         hourly = ForecastFacade.hourly_weather(lat, lon, params[:unit])
-        render json: ForecastSerializer.api_format(lat, lon, current, daily, hourly)
+        render json: ForecastSerializer.api_format(current, daily, hourly)
       end
     end
   end
