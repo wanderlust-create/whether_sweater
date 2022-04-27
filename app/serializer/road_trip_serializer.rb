@@ -11,7 +11,7 @@ class RoadTripSerializer
         "attributes": {
           "start_city": origin,
           "end_city": destination,
-          "travel_time": time.travel_time,
+          "travel_time": time,
           "weather_at_eta": {
             "temperature": eta_weather[:temp],
             "conditions": eta_weather[:weather][0][:description]

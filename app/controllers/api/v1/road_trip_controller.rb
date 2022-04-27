@@ -10,7 +10,14 @@ module Api
         unit = 'imperial'
         time = DirectionsFacade.directions(origin, destination)
         if time.class == String
-          render json: time, status: 200
+          eta_weather = {
+            temp: '',
+            weather:[ {
+              description: ''
+            }]
+          }
+          render json: RoadTripSerializer.api_format(origin, destination, time, eta_weather), status: 201
+          # render json: time, status: 200
         else
           eta = time.eta_time
           destination_location = ForecastFacade.location(destination)
@@ -18,7 +25,7 @@ module Api
           lon = destination_location.longitude
           weather = ForecastFacade.road_trip_hourly_weather(lat, lon, unit)
           eta_weather = weather[eta]
-          render json: RoadTripSerializer.api_format(origin, destination, time, eta_weather), status: 201
+          render json: RoadTripSerializer.api_format(origin, destination, time.travel_time, eta_weather), status: 201
         end
       end
 
