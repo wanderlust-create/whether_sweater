@@ -110,7 +110,7 @@ RSpec.describe 'Wheather Sweater API', type: :request do
         headers = { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
         post '/api/v1/road_trip', headers: headers, params: JSON.generate(trip_data)
         expect(response.status).to eq(401)
-        expect(response.body).to eq('Invalid API key')
+        expect(response.body).to eq("{\"error\":\"Invalid API key\"}")
       end
     end
   end

@@ -32,7 +32,7 @@ module Api
 
       def authenticate
         user = User.find_by(api_key: params[:api_key])
-        render json: 'Invalid API key', status: 401 unless user
+        render json: { error: 'Invalid API key' }, status: 401 unless user
       end
 
       def verify_params
