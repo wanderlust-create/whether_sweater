@@ -80,7 +80,7 @@ RSpec.describe 'Wheather Sweater API', type: :request do
         headers = { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
         post '/api/v1/sessions', headers: headers, params: JSON.generate(session_data)
         expect(response.status).to eq(400)
-        expect(response.body).to eq("{\"error\":\"Account does not exist\"}")
+        expect(response.body).to eq("{\"error\":\"Your email and/or password are invalid\"}")
       end
     end
   end

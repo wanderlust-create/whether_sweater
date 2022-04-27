@@ -47,7 +47,7 @@ RSpec.describe 'Wheather Sweater API', type: :request do
         post '/api/v1/users', headers: headers, params: JSON.generate(data)
 
         expect(response.status).to eq(400)
-        expect(response.body).to eq("Password confirmation doesn't match Password")
+        expect(response.body).to eq("{\"error\":\"Password confirmation doesn't match Password\"}")
       end
     end
   end

@@ -11,7 +11,7 @@ module Api
           user.update!(api_key: api_key.token)
           render json: UsersSerializer.api_format(user), status: 201
         else
-          render json: user.errors.full_messages.to_sentence, status: :bad_request
+          render json: { error: user.errors.full_messages.to_sentence }, status: :bad_request
         end
       end
 
