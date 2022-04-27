@@ -9,10 +9,10 @@ module Api
         destination = params[:destination]
         unit = 'imperial'
         time = DirectionsFacade.directions(origin, destination)
-        if time.class == String
+        if time.instance_of?(String)
           eta_weather = {
             temp: '',
-            weather:[ {
+            weather: [{
               description: ''
             }]
           }
@@ -33,9 +33,7 @@ module Api
 
       def authenticate
         user = User.find_by(api_key: params[:api_key])
-        if !user
-          render json: 'Invalid API key', status: 401
-        end
+        render json: 'Invalid API key', status: 401 unless user
       end
 
       def verify_params

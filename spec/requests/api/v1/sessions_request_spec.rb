@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 RSpec.describe 'Wheather Sweater API', type: :request do
   describe 'POST /api/v1/sessions' do
@@ -8,19 +10,19 @@ RSpec.describe 'Wheather Sweater API', type: :request do
     describe 'happy path' do
       it 'signs in a new user and creates a session' do
         data = {
-          "email": "whatever@example.com",
-          "password": "password",
-          "password_confirmation": "password"
+          "email": 'whatever@example.com',
+          "password": 'password',
+          "password_confirmation": 'password'
         }
-        headers = {'Content-Type' => 'application/json', 'Accept' => 'application/json'}
+        headers = { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
         post '/api/v1/users', headers: headers, params: JSON.generate(data)
         new_user = User.last
 
         session_data = {
-          "email": "whatever@example.com",
-          "password": "password"
+          "email": 'whatever@example.com',
+          "password": 'password'
         }
-        headers = {'Content-Type' => 'application/json', 'Accept' => 'application/json'}
+        headers = { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
         post '/api/v1/sessions', headers: headers, params: JSON.generate(session_data)
         session = JSON.parse(response.body, symbolize_names: true)
 
@@ -43,42 +45,42 @@ RSpec.describe 'Wheather Sweater API', type: :request do
     describe 'sad paths' do
       it 'returns a json error if authentication fails' do
         data = {
-          "email": "whatever@example.com",
-          "password": "password",
-          "password_confirmation": "password"
+          "email": 'whatever@example.com',
+          "password": 'password',
+          "password_confirmation": 'password'
         }
-        headers = {'Content-Type' => 'application/json', 'Accept' => 'application/json'}
+        headers = { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
         post '/api/v1/users', headers: headers, params: JSON.generate(data)
         new_user = User.last
 
         session_data = {
-          "email": "whatever@example.com",
-          "password": "password1"
+          "email": 'whatever@example.com',
+          "password": 'password1'
         }
-        headers = {'Content-Type' => 'application/json', 'Accept' => 'application/json'}
+        headers = { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
         post '/api/v1/sessions', headers: headers, params: JSON.generate(session_data)
         expect(response.status).to eq(400)
-        expect(response.body).to eq("Your email and/or password are invalid")
+        expect(response.body).to eq('Your email and/or password are invalid')
       end
 
       it 'returns a json error if account does not exist' do
         data = {
-          "email": "whatever@example.com",
-          "password": "password",
-          "password_confirmation": "password"
+          "email": 'whatever@example.com',
+          "password": 'password',
+          "password_confirmation": 'password'
         }
-        headers = {'Content-Type' => 'application/json', 'Accept' => 'application/json'}
+        headers = { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
         post '/api/v1/users', headers: headers, params: JSON.generate(data)
         new_user = User.last
 
         session_data = {
-          "email": "whatever1@example.com",
-          "password": "password"
+          "email": 'whatever1@example.com',
+          "password": 'password'
         }
-        headers = {'Content-Type' => 'application/json', 'Accept' => 'application/json'}
+        headers = { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
         post '/api/v1/sessions', headers: headers, params: JSON.generate(session_data)
         expect(response.status).to eq(400)
-        expect(response.body).to eq("Account does not exist")
+        expect(response.body).to eq('Account does not exist')
       end
     end
   end

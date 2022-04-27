@@ -7,7 +7,7 @@ class RoadTripSerializer
     {
       "data": {
         "id": nil,
-        "type": "roadtrip",
+        "type": 'roadtrip',
         "attributes": {
           "start_city": origin,
           "end_city": destination,

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 RSpec.describe 'Wheather Sweater API', type: :request do
   describe 'POST /api/v1/users' do
@@ -7,11 +9,11 @@ RSpec.describe 'Wheather Sweater API', type: :request do
     describe 'happy path' do
       it 'creates a user' do
         data = {
-          "email": "whatever@example.com",
-          "password": "password",
-          "password_confirmation": "password"
+          "email": 'whatever@example.com',
+          "password": 'password',
+          "password_confirmation": 'password'
         }
-        headers = {'Content-Type' => 'application/json', 'Accept' => 'application/json'}
+        headers = { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
         post '/api/v1/users', headers: headers, params: JSON.generate(data)
 
         new_user = User.last
@@ -25,10 +27,10 @@ RSpec.describe 'Wheather Sweater API', type: :request do
     describe 'sad path' do
       it 'returns an error if information is missing' do
         data = {
-          "email": "whatever2@example.com",
-          "password": "password2"
+          "email": 'whatever2@example.com',
+          "password": 'password2'
         }
-        headers = {'Content-Type' => 'application/json', 'Accept' => 'application/json'}
+        headers = { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
         post '/api/v1/users', headers: headers, params: JSON.generate(data)
 
         new_user = User.last
@@ -37,11 +39,11 @@ RSpec.describe 'Wheather Sweater API', type: :request do
       end
       it 'returns an error if authentication fails' do
         data = {
-          "email": "whatever@example.com",
-          "password": "password",
-          "password_confirmation": "another password"
+          "email": 'whatever@example.com',
+          "password": 'password',
+          "password_confirmation": 'another password'
         }
-        headers = {'Content-Type' => 'application/json', 'Accept' => 'application/json'}
+        headers = { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
         post '/api/v1/users', headers: headers, params: JSON.generate(data)
 
         expect(response.status).to eq(400)

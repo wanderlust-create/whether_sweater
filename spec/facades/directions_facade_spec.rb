@@ -14,7 +14,7 @@ RSpec.describe DirectionsFacade, :vcr do
     describe '#directions sad path' do
       it 'will return an error message if route is not possible' do
         route = DirectionsFacade.directions('Mexico City', 'London')
-        expect(route).to eq("impossible route")
+        expect(route).to eq('impossible route')
       end
     end
   end
