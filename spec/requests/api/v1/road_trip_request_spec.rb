@@ -64,7 +64,7 @@ RSpec.describe 'Wheather Sweater API', type: :request do
         headers = { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
         post '/api/v1/road_trip', headers: headers, params: JSON.generate(trip_data)
         expect(response.status).to eq(401)
-        expect(response.body).to eq('You need api_key, origin, & destination params to make a sucessful request')
+        expect(response.body).to eq( "{\"error\":\"You need api_key, origin, and destination params to make a sucessful request\"}")
       end
       it 'returns json error if route is impossible' do
         User.destroy_all

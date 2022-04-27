@@ -17,7 +17,6 @@ module Api
             }]
           }
           render json: RoadTripSerializer.api_format(origin, destination, time, eta_weather), status: 201
-          # render json: time, status: 200
         else
           eta = time.eta_time
           destination_location = ForecastFacade.location(destination)
@@ -38,7 +37,7 @@ module Api
 
       def verify_params
         if !params[:api_key] || !params[:origin] || !params[:destination]
-          render json: 'You need api_key, origin, & destination params to make a sucessful request', status: 401
+          render json: { error: 'You need api_key, origin, and destination params to make a sucessful request' }, status: 401
         end
       end
     end
