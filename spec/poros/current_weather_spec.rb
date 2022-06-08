@@ -29,9 +29,9 @@ RSpec.describe CurrentWeather do
 
     current_weather = CurrentWeather.new(current_weather_data)
     expect(current_weather).to be_a CurrentWeather
-    expect(current_weather.datetime).to eq('2022-04-24 10:24:48 -0500')
-    expect(current_weather.sunrise).to eq('2022-04-24 05:55:52 -0500')
-    expect(current_weather.sunset).to eq('2022-04-24 19:15:45 -0500')
+    expect(current_weather.datetime).to eq('2022-04-24 15:24:48 UTC')
+    expect(current_weather.sunrise).to eq('2022-04-24 10:55:52 UTC')
+    expect(current_weather.sunset).to eq('2022-04-25 00:15:45 UTC')
     expect(current_weather.temperature).to eq(21.58)
     expect(current_weather.feels_like).to eq(21.52)
     expect(current_weather.humidity).to eq(66)

@@ -45,9 +45,9 @@ RSpec.describe DailyWeather do
 
     daily_weather = DailyWeather.new(daily_weather_data)
     expect(daily_weather).to be_a DailyWeather
-    expect(daily_weather.date).to eq('2022-04-24 12:00:00 -0500')
-    expect(daily_weather.sunrise).to eq('2022-04-24 05:55:52 -0500')
-    expect(daily_weather.sunset).to eq('2022-04-24 19:15:45 -0500')
+    expect(daily_weather.date).to eq('2022-04-24 17:00:00 UTC')
+    expect(daily_weather.sunrise).to eq('2022-04-24 10:55:52 UTC')
+    expect(daily_weather.sunset).to eq('2022-04-25 00:15:45 UTC')
     expect(daily_weather.max_temp).to eq(28.15)
     expect(daily_weather.min_temp).to eq(14.9)
     expect(daily_weather.conditions).to eq('scattered clouds')

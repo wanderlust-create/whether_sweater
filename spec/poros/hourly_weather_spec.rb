@@ -29,7 +29,7 @@ RSpec.describe HourlyWeather do
 
     hourly_weather = HourlyWeather.new(hourly_weather_data)
     expect(hourly_weather).to be_a HourlyWeather
-    expect(hourly_weather.time).to eq('2022-04-24 10:00:00 -0500')
+    expect(hourly_weather.time).to eq('2022-04-24 15:00:00 UTC')
     expect(hourly_weather.temperature).to eq(21.58)
     expect(hourly_weather.conditions).to eq('clear sky')
     expect(hourly_weather.icon).to eq('01d')
