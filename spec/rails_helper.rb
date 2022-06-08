@@ -78,10 +78,10 @@ VCR.configure do |config|
   config.allow_http_connections_when_no_cassette = true
   config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
   config.hook_into :webmock
-  config.filter_sensitive_data('<open_key>') { ENV['open_key'] }
-  config.filter_sensitive_data('<map_key>') { ENV['map_key'] }
-  config.filter_sensitive_data('<un_ac>') { ENV['un_ac'] }
-  config.filter_sensitive_data('<un_se>') { ENV['un_se'] }
+  config.filter_sensitive_data('<open_key>') { ENV.fetch('open_key', nil) }
+  config.filter_sensitive_data('<map_key>') { ENV.fetch('map_key', nil) }
+  config.filter_sensitive_data('<un_ac>') { ENV.fetch('un_ac', nil) }
+  config.filter_sensitive_data('<un_se>') { ENV.fetch('un_se', nil) }
   # config.default_cassette_options = { re_record_interval: 1.hour }
   config.default_cassette_options = { record: :new_episodes }
   config.configure_rspec_metadata!

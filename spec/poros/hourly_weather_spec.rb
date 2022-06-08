@@ -4,27 +4,27 @@ require 'rails_helper'
 RSpec.describe HourlyWeather do
   it 'exists with attributes' do
     hourly_weather_data = {
-      "dt": 1_650_812_400,
-      "temp": 21.58,
-      "feels_like": 21.52,
-      "pressure": 1023,
-      "humidity": 66,
-      "dew_point": 14.96,
-      "uvi": 0,
-      "clouds": 0,
-      "visibility": 10_000,
-      "wind_speed": 3.15,
-      "wind_deg": 152,
-      "wind_gust": 4.33,
-      "weather": [
+      dt: 1_650_812_400,
+      temp: 21.58,
+      feels_like: 21.52,
+      pressure: 1023,
+      humidity: 66,
+      dew_point: 14.96,
+      uvi: 0,
+      clouds: 0,
+      visibility: 10_000,
+      wind_speed: 3.15,
+      wind_deg: 152,
+      wind_gust: 4.33,
+      weather: [
         {
-          "id": 800,
-          "main": 'Clear',
-          "description": 'clear sky',
-          "icon": '01d'
+          id: 800,
+          main: 'Clear',
+          description: 'clear sky',
+          icon: '01d'
         }
       ],
-      "pop": 0
+      pop: 0
     }
 
     hourly_weather = HourlyWeather.new(hourly_weather_data)

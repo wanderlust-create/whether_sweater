@@ -4,25 +4,25 @@ require 'rails_helper'
 RSpec.describe CurrentWeather do
   it 'exists with attributes' do
     current_weather_data = {
-      "dt": 1_650_813_888,
-      "sunrise": 1_650_797_752,
-      "sunset": 1_650_845_745,
-      "temp": 21.58,
-      "feels_like": 21.52,
-      "pressure": 1023,
-      "humidity": 66,
-      "dew_point": 14.96,
-      "uvi": 0,
-      "clouds": 0,
-      "visibility": 10_000,
-      "wind_speed": 2.57,
-      "wind_deg": 0,
-      "weather": [
+      dt: 1_650_813_888,
+      sunrise: 1_650_797_752,
+      sunset: 1_650_845_745,
+      temp: 21.58,
+      feels_like: 21.52,
+      pressure: 1023,
+      humidity: 66,
+      dew_point: 14.96,
+      uvi: 0,
+      clouds: 0,
+      visibility: 10_000,
+      wind_speed: 2.57,
+      wind_deg: 0,
+      weather: [
         {
-          "id": 800,
-          "main": 'Clear',
-          "description": 'clear sky',
-          "icon": '01d'
+          id: 800,
+          main: 'Clear',
+          description: 'clear sky',
+          icon: '01d'
         }
       ]
     }

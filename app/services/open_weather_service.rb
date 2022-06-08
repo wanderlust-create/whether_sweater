@@ -7,7 +7,7 @@ class OpenWeatherService
 
   def self.get_url(url, lat, lon, _units)
     conn = Faraday.new(url: 'https://api.openweathermap.org') do |faraday|
-      faraday.params['appid'] = ENV['open_key']
+      faraday.params['appid'] = ENV.fetch('open_key', nil)
       faraday.params['lat'] = lat.to_s
       faraday.params['lon'] = lon.to_s
       faraday.params['exclude'] = 'minutely, alerts'

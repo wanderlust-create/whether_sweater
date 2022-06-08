@@ -9,7 +9,7 @@ module Api
           render json: { error: 'Your email and/or password are invalid' }, status: :bad_request
         elsif user&.authenticate(params[:password])
           session[:user_id] = user.id
-          render json: UsersSerializer.api_format(user), status: 201
+          render json: UsersSerializer.api_format(user), status: :created
         elsif !user.authenticate(params[:password])
           render json: { error: 'Your email and/or password are invalid' }, status: :bad_request
         end

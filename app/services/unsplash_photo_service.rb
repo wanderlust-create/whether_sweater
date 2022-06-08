@@ -7,7 +7,7 @@ class UnsplashPhotoService
 
   def self.get_url(url, location)
     conn = Faraday.new(url: 'https://api.unsplash.com') do |faraday|
-      faraday.params['client_id'] = ENV['un_ac']
+      faraday.params['client_id'] = ENV.fetch('un_ac', nil)
       faraday.params['query'] = "#{location}landscape"
       faraday.params['orientation'] = 'landscape'
       faraday.params['page'] = 1
