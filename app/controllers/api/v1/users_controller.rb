@@ -23,7 +23,8 @@ module Api
 
       def verify_params
         if !params[:email] || !params[:password] || !params[:password_confirmation]
-          render json: { error:'You need an email, password, and password_confirmation to create an account' }, status: 400
+          render json: { error: 'You need an email, password, and password_confirmation to create an account' },
+                 status: 400
         end
       end
     end

@@ -37,7 +37,8 @@ module Api
 
       def verify_params
         if !params[:api_key] || !params[:origin] || !params[:destination]
-          render json: { error: 'You need api_key, origin, and destination params to make a sucessful request' }, status: 401
+          render json: { error: 'You need api_key, origin, and destination params to make a sucessful request' },
+                 status: 401
         end
       end
     end
