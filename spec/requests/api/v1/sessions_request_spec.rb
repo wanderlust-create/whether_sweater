@@ -16,7 +16,6 @@ RSpec.describe 'Wheather Sweater API', type: :request do
         }
         headers = { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
         post '/api/v1/users', headers: headers, params: JSON.generate(data)
-        new_user = User.last
 
         session_data = {
           email: 'whatever@example.com',
@@ -51,7 +50,6 @@ RSpec.describe 'Wheather Sweater API', type: :request do
         }
         headers = { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
         post '/api/v1/users', headers: headers, params: JSON.generate(data)
-        new_user = User.last
 
         session_data = {
           email: 'whatever@example.com',
@@ -71,7 +69,6 @@ RSpec.describe 'Wheather Sweater API', type: :request do
         }
         headers = { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
         post '/api/v1/users', headers: headers, params: JSON.generate(data)
-        new_user = User.last
 
         session_data = {
           email: 'whatever1@example.com',

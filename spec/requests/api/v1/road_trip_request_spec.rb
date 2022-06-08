@@ -101,7 +101,6 @@ RSpec.describe 'Wheather Sweater API', type: :request do
         headers = { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
         post '/api/v1/users', headers: headers, params: JSON.generate(user4_data)
 
-        user4 = User.last
         trip_data = {
           origin: 'Denver,CO',
           destination: 'London',
