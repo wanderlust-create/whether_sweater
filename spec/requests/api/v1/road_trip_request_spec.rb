@@ -7,18 +7,18 @@ RSpec.describe 'Wheather Sweater API', type: :request do
       it 'returns json request' do
         User.destroy_all
         user1_data = {
-          "email": 'whatever@example.com',
-          "password": 'password',
-          "password_confirmation": 'password'
+          email: 'whatever@example.com',
+          password: 'password',
+          password_confirmation: 'password'
         }
         headers = { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
         post '/api/v1/users', headers: headers, params: JSON.generate(user1_data)
 
         user1 = User.last
         trip_data = {
-          "origin": 'Denver,CO',
-          "destination": 'Pueblo,CO',
-          "api_key": user1.api_key
+          origin: 'Denver,CO',
+          destination: 'Pueblo,CO',
+          api_key: user1.api_key
         }
         headers = { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
         post '/api/v1/road_trip', headers: headers, params: JSON.generate(trip_data)
@@ -49,38 +49,38 @@ RSpec.describe 'Wheather Sweater API', type: :request do
       it 'returns json error if incormation is missing' do
         User.destroy_all
         user2_data = {
-          "email": 'lama@example.com',
-          "password": 'happy1',
-          "password_confirmation": 'happy1'
+          email: 'lama@example.com',
+          password: 'happy1',
+          password_confirmation: 'happy1'
         }
         headers = { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
         post '/api/v1/users', headers: headers, params: JSON.generate(user2_data)
 
         user2 = User.last
         trip_data = {
-          "origin": 'Denver,CO',
-          "api_key": user2.api_key
+          origin: 'Denver,CO',
+          api_key: user2.api_key
         }
         headers = { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
         post '/api/v1/road_trip', headers: headers, params: JSON.generate(trip_data)
         expect(response.status).to eq(401)
-        expect(response.body).to eq( "{\"error\":\"You need api_key, origin, and destination params to make a sucessful request\"}")
+        expect(response.body).to eq('{"error":"You need api_key, origin, and destination params to make a sucessful request"}')
       end
       it 'returns json error if route is impossible' do
         User.destroy_all
         user3_data = {
-          "email": 'frog@example.com',
-          "password": 'happy1',
-          "password_confirmation": 'happy1'
+          email: 'frog@example.com',
+          password: 'happy1',
+          password_confirmation: 'happy1'
         }
         headers = { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
         post '/api/v1/users', headers: headers, params: JSON.generate(user3_data)
 
         user3 = User.last
         trip_data = {
-          "origin": 'Denver,CO',
-          "destination": 'London',
-          "api_key": user3.api_key
+          origin: 'Denver,CO',
+          destination: 'London',
+          api_key: user3.api_key
         }
         headers = { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
         post '/api/v1/road_trip', headers: headers, params: JSON.generate(trip_data)
@@ -94,23 +94,22 @@ RSpec.describe 'Wheather Sweater API', type: :request do
       it 'returns json error if API key is invalid' do
         User.destroy_all
         user4_data = {
-          "email": 'dog@example.com',
-          "password": 'happy1',
-          "password_confirmation": 'happy1'
+          email: 'dog@example.com',
+          password: 'happy1',
+          password_confirmation: 'happy1'
         }
         headers = { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
         post '/api/v1/users', headers: headers, params: JSON.generate(user4_data)
 
-        user4 = User.last
         trip_data = {
-          "origin": 'Denver,CO',
-          "destination": 'London',
-          "api_key": '12345'
+          origin: 'Denver,CO',
+          destination: 'London',
+          api_key: '12345'
         }
         headers = { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
         post '/api/v1/road_trip', headers: headers, params: JSON.generate(trip_data)
         expect(response.status).to eq(401)
-        expect(response.body).to eq("{\"error\":\"Invalid API key\"}")
+        expect(response.body).to eq('{"error":"Invalid API key"}')
       end
     end
   end

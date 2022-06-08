@@ -34,7 +34,7 @@ RSpec.describe 'Wheather Sweater API', type: :request do
         expect(background[:data][:attributes][:image][:credit][:photographer]).to be_a String
         expect(background[:data][:attributes][:image][:credit]).to have_key(:portfolio)
         expect(background[:data][:attributes][:image][:credit][:portfolio]).to be_a String
-        expect(background[:data][:attributes][:image][:credit]).to have_key(:"Guidelines and Crediting")
+        expect(background[:data][:attributes][:image][:credit]).to have_key(:'Guidelines and Crediting')
       end
     end
   end

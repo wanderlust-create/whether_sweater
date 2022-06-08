@@ -9,9 +9,9 @@ module Api
         if user.save
           api_key = user.api_keys.create! token: SecureRandom.hex
           user.update!(api_key: api_key.token)
-          render json: UsersSerializer.api_format(user), status: 201
+          render json: UsersSerializer.api_format(user), status: :created
         else
-          render json: user.errors.full_messages.to_sentence, status: :bad_request
+          render json: { error: user.errors.full_messages.to_sentence }, status: :bad_request
         end
       end
 
@@ -23,7 +23,8 @@ module Api
 
       def verify_params
         if !params[:email] || !params[:password] || !params[:password_confirmation]
-          render json: { error:'You need an email, password, and password_confirmation to create an account' }, status: 400
+          render json: { error: 'You need an email, password, and password_confirmation to create an account' },
+                 status: :bad_request
         end
       end
     end

@@ -2,7 +2,7 @@
 
 class MapquestGeocodingService
   def self.get_lat_lon(location)
-    get_url("/geocoding/v1/address?key=#{ENV['map_key']}&location=#{location}")
+    get_url("/geocoding/v1/address?key=#{ENV.fetch('map_key', nil)}&location=#{location}")
   end
 
   def self.get_url(url)
