@@ -32,6 +32,7 @@ gem 'jsonapi-serializer'
 gem 'rubocop-rails', require: false
 gem 'rack', '>= 2.2.3.1'
 gem 'nokogiri', '>= 1.13.6'
+gem 'actionpack', '>= 5.2.7.1'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
