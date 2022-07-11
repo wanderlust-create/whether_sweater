@@ -73,7 +73,7 @@ reference: [Project Specs and Overview](https://backend.turing.edu/module3/proje
 
 ----------
 
-##### Gems
+#### Gems
 
 User Authentication | [bcrypt](https://github.com/bcrypt-ruby/bcrypt-ruby) |
 
@@ -82,7 +82,7 @@ API | [jsonapi-serializer](https://github.com/fotinakis/jsonapi-serializers) | [
 Testing | [rspec-rails](https://github.com/rspec/rspec-rails) | [simplecov](https://github.com/simplecov-ruby/simplecov) | [capybara](https://github.com/teamcapybara/capybara) | [webmock](https://github.com/bblimke/webmock) | [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers) | [VCR](https://github.com/vcr/vcr) | [pry](https://github.com/pry/pry) |
 
 ----------
-##### API key registerations needed: currently, all registerations and data access needed to run this app is free
+#### API key registerations needed: currently, all registerations and data access needed to run this app is free
 
 [MapQuest Directions & Geolocation API](https://developer.mapquest.com/documentation)<br>
 [OpenWeather API](https://openweathermap.org/faq)<br>
@@ -91,7 +91,8 @@ Testing | [rspec-rails](https://github.com/rspec/rspec-rails) | [simplecov](http
 
 ----------
 
-### Set Up: You will need to apply for your own unique API key from the above API data providers ^^
+### Set Up: 
+You will need to apply for your own unique API keys from the above API data providers<br>
 On your local system, open a terminal session to run the following commands:
 1. Clone this repository:`git@github.com:wanderlust-create/whether_sweater.git`
 3. Navigate to the newly cloned directory:`cd whether_sweater`
@@ -99,11 +100,16 @@ On your local system, open a terminal session to run the following commands:
 5. To install the required Gems run:`bundle install`
 6. If errors occur, check for proper installation and versions of:`bundler`, `ruby`, and `rails`
 7. Add your unique API keys:`touch config/application.yml', 'atom config/application.yml'
-8. Add your unique kets to the `/config/application.yml` file as follows:<br>
-<img src="https://user-images.githubusercontent.com/67713820/178354383-3161ba72-ca67-4ec9-88a5-a7e925a0d532.png" alt="simplecov" max-width="200"><br>
-10. Set up the database locally with:`rails db:{drop, create, migrate }`
-11. Open your text editor and check to see that `schema.rb` was created.
-12. You may also run the RSpec test suite locally with the command `bundle exec rspec` to ensure everything is functioning as expected.
+8. Add your unique keys to the `/config/application.yml` file as follows:<br>
+```
+map_key: your unique MapQuest API key 
+open_key: your unique OpenWeather API key
+un_ac: your unique Unsplash API key
+YELP_API_KEY: Bearer your unique Yelp Fusion API key
+```
+9. Set up the database locally with:`rails db:{drop, create, migrate }`
+10. Open your text editor and check to see that `schema.rb` was created.
+11. You may also run the RSpec test suite locally with the command `bundle exec rspec` to ensure everything is functioning as expected.
 
 ----------
 
