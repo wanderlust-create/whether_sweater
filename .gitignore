@@ -27,3 +27,4 @@
 
 # Ignore simplecov coverage reports
 /coverage/*
+/spec/fixtures/*
