@@ -66,7 +66,7 @@ reference: [Project Specs and Overview](https://backend.turing.edu/module3/proje
 
 ### Getting Started
 
-##### Versions
+#### Versions
 
 - Ruby 2.7.4
 - Rails 5.2.7
@@ -84,10 +84,10 @@ Testing | [rspec-rails](https://github.com/rspec/rspec-rails) | [simplecov](http
 ----------
 #### API key registerations needed: currently, all registerations and data access needed to run this app is free
 
-[MapQuest Directions & Geolocation API](https://developer.mapquest.com/documentation)<br>
-[OpenWeather API](https://openweathermap.org/faq)<br>
-[Unsplash photographs API](https://unsplash.com/documentation)<br>
-[Yelp Fusion API](https://www.yelp.com/developers/documentation/v3/get_started)<br>
+-[MapQuest Directions & Geolocation API](https://developer.mapquest.com/documentation)<br>
+-[OpenWeather API](https://openweathermap.org/faq)<br>
+-[Unsplash photographs API](https://unsplash.com/documentation)<br>
+-[Yelp Fusion API](https://www.yelp.com/developers/documentation/v3/get_started)<br>
 
 ----------
 
@@ -124,6 +124,7 @@ YELP_API_KEY: Bearer your unique Yelp Fusion API key
 
 ### Whether Sweater API Avaliable Endpoints: [See Postman Documentation](https://documenter.getpostman.com/view/20045145/UzJQqZiU)
 <br><br>
+
 ## 🌤
 #### Weather Forecast for Application Landing Page  
 | http verb | uri | params | example | outcome |
@@ -441,12 +442,12 @@ Munchie JSON response:
 Whether Sweater was created using Test Driven Development methodology.
 
 
-### RSpec testing
+#### RSpec testing
 Run test suite using `bundle exec rspec`. All tests are currently passing passing.
 <img src="https://user-images.githubusercontent.com/67713820/178348089-597a04d7-9b26-43e9-b10c-ba37774604d4.png" alt="RSpec" max-width="200"><br><br>
 
 
-### Simplecov testing
+#### Simplecov testing
 
 Simplecov shows 100% code testing coverage.
 <img src="https://user-images.githubusercontent.com/67713820/178348512-bbe1de7c-5a49-48f5-95e0-afcd954af1b4.png" alt="simplecov" max-width="200"><br><br>
