@@ -25,14 +25,14 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
+gem 'actionpack', '>= 5.2.7.1'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'faraday'
 gem 'figaro'
 gem 'jsonapi-serializer'
-gem 'rubocop-rails', require: false
-gem 'rack', '>= 2.2.3.1'
 gem 'nokogiri', '>= 1.13.6'
-gem 'actionpack', '>= 5.2.7.1'
+gem 'rack', '>= 2.2.3.1'
+gem 'rubocop-rails', require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
