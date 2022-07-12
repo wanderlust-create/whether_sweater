@@ -99,7 +99,7 @@ On your local system, open a terminal session to run the following commands:
 4. If bundler is not installed run:`gem install bundler`
 5. To install the required Gems run:`bundle install`
 6. If errors occur, check for proper installation and versions of:`bundler`, `ruby`, and `rails`
-7. Add file to store your unique API keys:`touch config/application.yml`, `atom config/application.yml'
+7. Add file to store your unique API keys:`touch config/application.yml`, `atom config/application.yml`
 8. Add your unique API keys to the `/config/application.yml` file as follows:<br>
 ```
 map_key: your unique MapQuest API key 
