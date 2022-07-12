@@ -17,7 +17,7 @@ Explicit
 Implicit
 - Project planning
 - Reading/Writing documentation
-- Time Management/Prioritizing Work
+- Time Management/Prioritising Work
 - Break down large project goals into manageable steps
 - GitHub workflow and project management tools
 
@@ -82,16 +82,16 @@ API | [jsonapi-serializer](https://github.com/fotinakis/jsonapi-serializers) | [
 Testing | [rspec-rails](https://github.com/rspec/rspec-rails) | [simplecov](https://github.com/simplecov-ruby/simplecov) | [capybara](https://github.com/teamcapybara/capybara) | [webmock](https://github.com/bblimke/webmock) | [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers) | [VCR](https://github.com/vcr/vcr) | [pry](https://github.com/pry/pry) |
 
 ----------
-#### API key registerations needed: currently, all registerations and data access needed to run this app is free
+#### API key registrations needed: currently, all registrations and data access needed to run this app is free
 
--[MapQuest Directions & Geolocation API](https://developer.mapquest.com/documentation)<br>
--[OpenWeather API](https://openweathermap.org/faq)<br>
--[Unsplash photographs API](https://unsplash.com/documentation)<br>
--[Yelp Fusion API](https://www.yelp.com/developers/documentation/v3/get_started)<br>
+- [MapQuest Directions & Geolocation API](https://developer.mapquest.com/documentation)<br>
+- [OpenWeather API](https://openweathermap.org/faq)<br>
+- [Unsplash photographs API](https://unsplash.com/documentation)<br>
+- [Yelp Fusion API](https://www.yelp.com/developers/documentation/v3/get_started)<br>
 
 ----------
 
-### Set Up: 
+### Set Up:
 You will need to apply for your own unique API keys from the above API data providers<br>
 On your local system, open a terminal session to run the following commands:
 1. Clone this repository:`git@github.com:wanderlust-create/whether_sweater.git`
@@ -102,7 +102,7 @@ On your local system, open a terminal session to run the following commands:
 7. Add file to store your unique API keys:`touch config/application.yml`, `atom config/application.yml`
 8. Add your unique API keys to the `/config/application.yml` file as follows:<br>
 ```
-map_key: your unique MapQuest API key 
+map_key: your unique MapQuest API key
 open_key: your unique OpenWeather API key
 un_ac: your unique Unsplash API key
 YELP_API_KEY: Bearer your unique Yelp Fusion API key
@@ -122,7 +122,7 @@ YELP_API_KEY: Bearer your unique Yelp Fusion API key
 
 ----------
 
-### Whether Sweater API Avaliable Endpoints: [See Postman Documentation](https://documenter.getpostman.com/view/20045145/UzJQqZiU)
+### Whether Sweater API Available Endpoints: [See Postman Documentation](https://documenter.getpostman.com/view/20045145/UzJQqZiU)
 <br><br>
 
 ## 🌤
