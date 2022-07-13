@@ -245,7 +245,7 @@ DEPENDENCIES
   pry
   puma (>= 4.3.12)
   rack (>= 2.2.3.1)
-  rails (~> 5.2.7)
+  rails (~> 5.2.8)
   rspec-rails (~> 4.0.1)
   rubocop-rails
   shoulda-matchers
