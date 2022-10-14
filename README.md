@@ -94,22 +94,22 @@ Testing | [rspec-rails](https://github.com/rspec/rspec-rails) | [simplecov](http
 ### Set Up:
 You will need to apply for your own unique API keys from the above API data providers<br>
 On your local system, open a terminal session to run the following commands:
-1. Clone this repository:`git@github.com:wanderlust-create/whether_sweater.git`
-3. Navigate to the newly cloned directory:`cd whether_sweater`
-4. If bundler is not installed run:`gem install bundler`
-5. To install the required Gems run:`bundle install`
-6. If errors occur, check for proper installation and versions of:`bundler`, `ruby`, and `rails`
-7. Add file to store your unique API keys:`touch config/application.yml`, `atom config/application.yml`
-8. Add your unique API keys to the `/config/application.yml` file as follows:<br>
+- Clone this repository:`git@github.com:wanderlust-create/whether_sweater.git`
+- Navigate to the newly cloned directory:`cd whether_sweater`
+- If bundler is not installed run:`gem install bundler`
+- To install the required Gems run:`bundle install`
+- If errors occur, check for proper installation and versions of:`bundler`, `ruby`, and `rails`
+- Add file to store your unique API keys:`touch config/application.yml`, `atom config/application.yml`
+- Add your unique API keys to the `/config/application.yml` file as follows:<br>
 ```
-map_key: your unique MapQuest API key
-open_key: your unique OpenWeather API key
-un_ac: your unique Unsplash API key
-YELP_API_KEY: Bearer your unique Yelp Fusion API key
+map_key: <your unique MapQuest API key>
+open_key: <your unique OpenWeather API key>
+un_ac: <your unique Unsplash API key>
+YELP_API_KEY: Bearer <your unique Yelp Fusion API key>
 ```
-9. Set up the database locally with:`rails db:{drop, create, migrate }`
-10. Open your text editor and check to see that `schema.rb` was created.
-11. You may also run the RSpec test suite locally with the command `bundle exec rspec` to ensure everything is functioning as expected.
+- Set up the database locally with:`rails db:{drop, create, migrate }`
+-  Open your text editor and check to see that `schema.rb` was created.
+- You may also run the RSpec test suite locally with the command `bundle exec rspec` to ensure everything is functioning as expected.
 
 ----------
 
